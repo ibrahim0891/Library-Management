@@ -1,44 +1,47 @@
-import { Books, Plus, Star, User } from "phosphor-react";
+import { BookOpen, Books, Hand, HandPalm, Heart, Plus, Star, User } from "phosphor-react";
 import Reviews from "./Reviews";
 import Ratings from "./Ratings";
 import BookDetails from "./BookDetails";
 
 let ContentDetails = () => {
     return (
-        <div className=' w-96 bg-white h-[calc(100vh-100px)] p-8 pb-0 overflow-y-auto '>
-            <div className="text-3xl font-bold shadow-sm border-b -m-8 p-6 mb-6 flex items-center space-x-3 justify-start"> 
-                <Books />
-                <h1> Book Details</h1>
-            </div>
-            <div>
-                <img
-                    src='https://static-cse.canva.com/blob/142565/Blue-Orange-and-Yellow-Cool-Memoir_Inspirational-Book-Cover.jpg'
-                    alt=''
-                />
-            </div>
-            <div>
-                <h1 className=' text-3xl font-bold my-4  text-center'>
-                    Futurama{" "}
-                </h1>
-            </div>
-            <div className='mt-8'>
-                <BookDetails></BookDetails>
-            </div>
-            <div>
-                {/* rateing and review */}
+        <div className=' w-96 bg-white pb-0 overflow-y-auto  '>
+            <div className='m-8 mb-0 '>
+                <div className='text-3xl font-bold shadow-sm border-b -m-8 p-6 mb-6 flex items-center space-x-3 justify-start sticky top-0 bg-white'>
+                    <Books />
+                    <h1> Book Details</h1>
+                </div>
+                <div>
+                    <img
+                        src='https://static-cse.canva.com/blob/142565/Blue-Orange-and-Yellow-Cool-Memoir_Inspirational-Book-Cover.jpg'
+                        alt=''
+                    />
+                </div>
+                <div>
+                    <h1 className=' text-3xl font-bold my-4  text-center'>
+                        Futurama{" "}
+                    </h1>
+                </div>
+                <div className='mt-8'>
+                    <BookDetails></BookDetails>
+                </div>
+                <div>
+                    {/* rateing and review */}
 
-                <Ratings />
+                    <Ratings />
 
-                <Reviews />
+                    <Reviews />
+                </div>
             </div>
-            <div className='sticky bottom-0 flex  bg-white p-2 border-t'>
-                <button className='p-4 w-1/2 hover:bg-gray-100 rounded-md'>
-                    {" "}
-                    Borrow{" "}
+
+            <div className='sticky bottom-0 p-4 gap-4 flex w-full border-t  bg-white'>
+                <button className='w-1/2 bg-gray-200/60 text-gray-800 hover:bg-gray-200 rounded-md flex items-center justify-center border-r-2'>
+                    <Heart className="mr-2" />
+                    Add to Wishlist
                 </button>
-                <button className='p-4 w-1/2 hover:bg-gray-100 rounded-md'>
-                    {" "}
-                    Wishlist{" "}
+                <button className='p-4 w-1/2 bg-gray-200/60 text-gray-800 hover:bg-gray-200 rounded-md flex items-center justify-center'>
+                    <HandPalm className="mr-2" />
+                    Borrow
                 </button>
             </div>
         </div>

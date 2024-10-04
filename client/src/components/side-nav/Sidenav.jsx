@@ -56,7 +56,7 @@ let sidenavLinks2 = [
 ];
 let Sidenav = () => {
     return (
-        <div className='bg-white p-6 pt-2 shadow-md gap-4'>
+        <div className='bg-white p-6 pt-6 shadow-md gap-4 sticky top-0 h-screen'>
             <SidenavLogo text={constants.logoText}> </SidenavLogo> 
             {sidenavLinks.map((link, index) => (
                 <SidenavLinks
