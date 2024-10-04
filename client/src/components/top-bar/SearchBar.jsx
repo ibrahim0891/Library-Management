@@ -10,7 +10,7 @@ const SearchBar = () => {
             <input 
                 placeholder="Search Library..." 
                 type="text" 
-                className="border-none bg-transparent focus:ring-0 placeholder-gray-400 text-gray-700  "
+                className="border-none bg-transparent focus:ring-0 placeholder-gray-400 text-gray-700  focus:outline-none"
             />
         </div>
     );

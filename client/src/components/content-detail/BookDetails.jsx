@@ -1,13 +1,13 @@
-const bookDetails = [
-    { label: "Author", value: "Michel Macarthy" },
-    { label: "Publisher", value: "HarperCollins" },
-    { label: "ISBN", value: "978-0-06-207350-1" },
-    { label: "Published", value: "2007" },
-    { label: "Pages", value: "320" },
-    { label: "Language", value: "English" },
-];
 
-let BookDetails = () => {
+let BookDetails = ({bookData}) => { 
+    const bookDetails = [
+        { label: "Author", value: bookData.authorName },
+        { label: "Publisher", value: bookData.publisher ? bookData.publisher : "Not available" },
+        { label: "ISBN", value: bookData.isbn },
+        { label: "Published", value: bookData.publishYear },
+        { label: "Pages", value: bookData.pages },
+        { label: "Language", value: "English" },
+    ];
     return (
         <table className='w-full border-collapse border-2 border-indigo-200 rounded-lg overflow-hidden'>
             <tbody>

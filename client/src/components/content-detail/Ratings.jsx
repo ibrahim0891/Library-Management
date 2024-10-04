@@ -1,13 +1,13 @@
 import { Star } from "phosphor-react";
 
  
-const rating = {
-  score: 1.5,
-  reviewCount: 128
-};
 
 
-let Ratings = () => {
+let Ratings = ({ratingData}) => {
+    const rating = {
+      score: ratingData,
+      reviewCount: Math.ceil(Math.random() * 250),
+    };
   return (
       <div className='mt-6  bg-white p-6 rounded-lg shadow-md'>
           <h2 className='text-2xl font-semibold text-gray-800 mb-3'>Rating</h2>

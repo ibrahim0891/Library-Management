@@ -1,20 +1,28 @@
-
-
-import SidenavLinks from "./SidenavLinks";
-import SidenavLogo from "./SidenavLogo"; 
+import SidenavLogo from "./SidenavLogo";
 import constants from "../../constents/constents";
-import { House , Book , BookOpen , Star , BookmarkSimple , Sparkle  , Gear , Question , Info} from "phosphor-react";
+import {
+    House,
+    Book,
+    BookOpen,
+    Star,
+    BookmarkSimple,
+    Sparkle,
+    Gear,
+    Question,
+    Info,
+} from "phosphor-react";
+import { NavLink } from "react-router-dom";
 
 let sidenavLinks = [
     {
         linkText: "Home",
-        linkIcon: <House/>,
+        linkIcon: <House />,
         link: "/",
     },
     {
         linkText: "Category",
         linkIcon: <Book />,
-        link: "/",
+        link: "/catogory",
     },
     {
         linkText: "My Library",
@@ -56,24 +64,44 @@ let sidenavLinks2 = [
 ];
 let Sidenav = () => {
     return (
-        <div className='bg-white p-6 pt-6 shadow-md gap-4 sticky top-0 h-screen'>
-            <SidenavLogo text={constants.logoText}> </SidenavLogo> 
-            {sidenavLinks.map((link, index) => (
-                <SidenavLinks
-                    key={index}
-                    linkText={link.linkText}
-                    linkIcon={link.linkIcon}
-                    link={link.link}
-                />
-            ))} 
-            {sidenavLinks2.map((link, index) => (
-                <SidenavLinks
-                    key={index}
-                    linkText={link.linkText}
-                    linkIcon={link.linkIcon}
-                    link={link.link}
-                />
-            ))}
+        <div className='bg-white p-6 pt-0 shadow-md gap-4 sticky top-0 h-screen flex flex-col'>
+            <div className='flex-grow'>
+                <SidenavLogo text={constants.logoText}> </SidenavLogo>
+                <hr className='mb-6' />
+                {sidenavLinks.map((link, index) => (
+                    <NavLink
+                        key={index}
+                        to={link.link}
+                        className={({ isActive }) =>
+                            isActive
+                                ? "bg-gray-800 text-white flex items-center gap-4 px-4 py-3  rounded-md"
+                                : "hover:bg-gray-100 flex items-center gap-4 px-4 py-3 rounded-md "
+                        }
+                    >
+                        <span
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "bg-gray-800 text-white rounded-md p-2 border"
+                                    : "bg-gray-100 rounded-md p-2 border hover:bg-indigo-500 hover:text-white"
+                            }
+                        >
+                            {link.linkIcon}
+                        </span>
+                        <span> {link.linkText} </span>
+                    </NavLink>
+                ))}
+            </div>
+            <div className='mt-auto'>
+                <hr className='my-3' />
+                {sidenavLinks2.map((link, index) => (
+                    <NavLink key={index} to={link.link} className='hover:bg-gray-100 flex items-center gap-4 px-2 py-2 my-2 '>
+                        <span className='bg-gray-100 rounded-md p-2 border hover:bg-indigo-500 hover:text-white '>
+                            {link.linkIcon}
+                        </span>
+                        <span> {link.linkText} </span>
+                    </NavLink>
+                ))}
+            </div>
         </div>
     );
 };
