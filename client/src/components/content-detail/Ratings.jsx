@@ -1,6 +1,10 @@
 import { Star } from "phosphor-react";
 
  
+const rating = {
+  score: 1.5,
+  reviewCount: 128
+};
 
 
 let Ratings = () => {
@@ -9,16 +13,18 @@ let Ratings = () => {
           <h2 className='text-2xl font-semibold text-gray-800 mb-3'>Rating</h2>
           <div className='flex items-center'>
               <span className='text-3xl font-bold text-yellow-500 mr-2'>
-                  4.0
+                  {rating.score.toFixed(1)}
               </span>
               <div className='flex'>
-                  <Star weight='fill' className='w-6 h-6 text-yellow-500' />
-                  <Star weight='fill' className='w-6 h-6 text-yellow-500' />
-                  <Star weight='fill' className='w-6 h-6 text-yellow-500' />
-                  <Star weight='fill' className='w-6 h-6 text-yellow-500' />
-                  <Star weight='regular' className='w-6 h-6 text-yellow-500' />
+                  {[1, 2, 3, 4, 5].map((starNumber) => (
+                      <Star
+                          key={starNumber}
+                          weight={starNumber <= Math.floor(rating.score) ? 'fill' : 'regular'}
+                          className='w-6 h-6 text-yellow-500'
+                      />
+                  ))}
               </div>
-              <span className='ml-2 text-sm text-gray-600'>(245 reviews)</span>
+              <span className='ml-2 text-sm text-gray-600'>({rating.reviewCount} reviews)</span>
           </div>
       </div>
   );
