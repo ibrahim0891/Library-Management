@@ -1,33 +1,38 @@
+import {
+    Drawer,
+    DrawerAction,
+    DrawerContent,
+    DropdownAction,
+} from "keep-react";
 import ContentDetails from "../components/content-detail/ContentDetails";
 import BookContext from "../context/context";
 
 import { useContext, useState } from "react";
+import Books from "../components/elements/Books";
 
 let MainContent = () => {
     const books = useContext(BookContext);
-    const [ bookID, setBookID ] = useState("");
+    const [bookID, setBookID] = useState("");
+    const [active, setActive] = useState(0);
     return (
         <div className='flex bg-gray-200 h-full'>
-            <div className='bg-white p-8 shadow-md  overflow-auto flex-1 grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-6'>
+            <div className='bg-white p-8 shadow-md  overflow-auto flex-1 grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-6 aspect-[2/3]'>
                 {books.map((book, index) => (
                     <div
                         key={index}
-                        className=' p-4 border-2 border-gray-200 rounded-lg hover:shadow-lg transition duration-200 space-y-4'
                         onClick={() => {
                             setBookID(index);
+                            setActive(index);
                         }}
+                        className={`${
+                            active === books.indexOf(book) ? "border-2 border-gray-500 rounded-lg" : ""
+                        }`}
                     >
-                        <img
-                            src={book.imageLink}
-                            alt=''
-                            className=' w-full object-cover mb-4'
+                        <Books
+                            imageLink={book.imageLink}
+                            bookName={book.bookName}
+                            authorName={book.authorName}
                         />
-                        <h2 className='text-2xl font-bold mb-2'>
-                            {book.bookName}
-                        </h2>
-                        <p className='text-gray-600 text-sm'>
-                            {book.authorName}
-                        </p>
                     </div>
                 ))}
             </div>

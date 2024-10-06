@@ -1,13 +1,15 @@
-
-
+import {
+    Button,
+    Drawer,
+    DrawerAction,
+    DrawerClose,
+    DrawerContent,
+} from "keep-react";
+import { Star } from "phosphor-react";
+import KeepDrawer from "../components/Body";
 
 let FavoriteContent = () => {
-  return (
-        <div className='flex-1 bg-gray-200 p-6 '>
-            <h1>FavoriteContent</h1>
-        </div>
-    );
+    return <h1> favioraite page</h1>;
 };
-
 
 export default FavoriteContent;

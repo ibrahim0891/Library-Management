@@ -10,8 +10,11 @@ import {
     Gear,
     Question,
     Info,
+    Hamburger,
+    List,
 } from "phosphor-react";
 import { NavLink } from "react-router-dom";
+import { Button, Drawer, DrawerAction, DrawerClose, DrawerContent } from "keep-react";
 
 let sidenavLinks = [
     {
@@ -64,10 +67,13 @@ let sidenavLinks2 = [
 ];
 let Sidenav = () => {
     return (
-        <div className='bg-white p-6 pt-0 shadow-md gap-4 sticky top-0 h-screen flex flex-col'>
+        <div className='bg-white p-6 pt-0 shadow-md gap-4 sticky top-0 h-screen flex flex-col hidden md:flex'>
+            
             <div className='flex-grow'>
                 <SidenavLogo text={constants.logoText}> </SidenavLogo>
                 <hr className='mb-6' />
+                
+
                 {sidenavLinks.map((link, index) => (
                     <NavLink
                         key={index}
@@ -94,7 +100,11 @@ let Sidenav = () => {
             <div className='mt-auto'>
                 <hr className='my-3' />
                 {sidenavLinks2.map((link, index) => (
-                    <NavLink key={index} to={link.link} className='hover:bg-gray-100 flex items-center gap-4 px-2 py-2 my-2 '>
+                    <NavLink
+                        key={index}
+                        to={link.link}
+                        className='hover:bg-gray-100 flex items-center gap-4 px-2 py-2 my-2 '
+                    >
                         <span className='bg-gray-100 rounded-md p-2 border hover:bg-indigo-500 hover:text-white '>
                             {link.linkIcon}
                         </span>
