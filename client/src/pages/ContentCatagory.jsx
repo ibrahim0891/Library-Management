@@ -86,7 +86,7 @@ let ContentCatagory = () => {
                                     key={category.id}
                                     name={category.name}
                                     icon={category.icon}
-                                    totalBooks={category.totalBooks}
+                                    totalBooks={category.totalBooks} 
                                     className='cursor-pointer bg-transparent'
                                 />
                             </div>             
