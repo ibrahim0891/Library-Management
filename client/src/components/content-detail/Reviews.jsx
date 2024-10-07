@@ -79,7 +79,7 @@ let Reviews = () => {
                 </div>
             ))}
             <button
-                className='mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out flex items-center justify-center w-full sm:w-auto'
+                className='my-6 mx-auto  px-6 py-3 border rounded-md text-gray-400 hover:text-gray-700 transition duration-300 ease-in-out flex items-center justify-center w-full sm:w-auto'
                 onClick={() => {
                     // Handle load more button click
                 }}

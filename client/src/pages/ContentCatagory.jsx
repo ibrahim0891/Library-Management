@@ -30,7 +30,7 @@ const BookListSection = ({ booksData, catagoryName }) => {
         <div className='my-3'>
             <Heading text={catagoryName} icon={<Book size={24} />} />
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 my-3'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-3'>
                 {booksData != undefined ? (
                     booksData.map((book) => (
                         <div key={book.id}>
@@ -59,11 +59,11 @@ let ContentCatagory = () => {
     const catagoryAndBooks = BooksCatagoryContext.catagoryAndBooks;
 
     return (
-        <div className="flex flex-nowrap h-full">
+        <div className='flex flex-nowrap h-full'>
             <div className='flex-1 bg-gray-50 p-6 h-full overflow-y-scroll'>
                 <div className='border border-gray-200 rounded-lg p-5  w-full shadow-sm overflow-auto '>
                     <Heading
-                        text='Browse by Category'
+                        text='Browse by Category' 
                         icon={<ListBullets size={24} />}
                     />
                     <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-6'>
@@ -98,10 +98,10 @@ let ContentCatagory = () => {
                     />
                 </div>
             </div>
-                <ContentDetails
-                    className='sticky top-0 overflow-auto h-full'
-                    bookID={1}
-                />
+            <ContentDetails
+                className='sticky top-0 overflow-auto h-full'
+                bookID={1}
+            />
         </div>
     );
 };

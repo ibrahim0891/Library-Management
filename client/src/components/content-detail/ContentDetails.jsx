@@ -20,7 +20,7 @@ let ContentDetails = ({ bookID }) => {
     return (
         <div className=' w-96 bg-white pb-0 overflow-y-auto  '>
             <div className='m-8 mb-0 '>
-                <div className='text-3xl font-bold shadow-sm border-b -m-8 p-6 mb-6 flex items-center space-x-3 justify-start sticky top-0 bg-white'>
+                <div className='text-2xl font-bold shadow-sm border-b -m-8 p-6 mb-6 flex items-center space-x-3 justify-start sticky top-0 bg-white'>
                     <Books />
                     <h1> Book Details {bookID} </h1>
                 </div>
@@ -28,15 +28,15 @@ let ContentDetails = ({ bookID }) => {
                     <img
                         src={book.imageLink}
                         alt=''
-                        className='w-2/3 block m-auto'
+                        className='w-2/4 block m-auto'
                     />
                 </div>
                 <div>
-                    <h1 className=' text-3xl font-bold my-4  text-center'>
+                    <h1 className=' text-2xl font-bold my-4   text-center'>
                         {book.bookName}
                     </h1>
                 </div>
-                <div className='mt-8'>
+                <div className='mt-4'>
                     <BookDetails bookData={book}></BookDetails>
                 </div>
                 <div>
