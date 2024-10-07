@@ -69,7 +69,7 @@ let Sidenav = () => {
     return (
         <div className='bg-white p-6 pt-0 shadow-md gap-4 sticky top-0 h-screen flex flex-col hidden md:flex'>
             
-            <div className='flex-grow'>
+            <div className='flex-grow overflow-auto'>
                 <SidenavLogo text={constants.logoText}> </SidenavLogo>
                 <hr className='mb-6' />
                 
