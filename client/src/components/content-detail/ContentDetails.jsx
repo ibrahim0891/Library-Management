@@ -12,7 +12,7 @@ import Reviews from "./Reviews";
 import Ratings from "./Ratings";
 import BookDetails from "./BookDetails";
 import { useContext } from "react";
-import BookContext from "../../context/context";
+import {BookContext} from "../../context/context";
 
 let ContentDetails = ({ bookID }) => {
     const books = useContext(BookContext);

@@ -1,5 +1,5 @@
 
-let BookDetails = ({bookData}) => { 
+let BookDetails = ({ bookData }) => {
     const bookDetails = [
         { label: "Author", value: bookData.authorName },
         { label: "Publisher", value: bookData.publisher ? bookData.publisher : "Not available" },
@@ -14,9 +14,8 @@ let BookDetails = ({bookData}) => {
                 {bookDetails.map((detail, index) => (
                     <tr
                         key={index}
-                        className={`${
-                            index % 2 === 0 ? "bg-slate-100" : ""
-                        } hover:bg-gray-100 transition duration-300`}
+                        className={`${index % 2 === 0 ? "bg-slate-100" : ""
+                            } hover:bg-gray-100 transition duration-300`}
                     >
                         <td className='py-4 px-6 text-slate-600 font-semibold text-lg'>
                             {detail.label}
@@ -29,6 +28,6 @@ let BookDetails = ({bookData}) => {
             </tbody>
         </table>
     );
-};
+}; 
 
 export default BookDetails;

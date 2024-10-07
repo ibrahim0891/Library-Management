@@ -5,7 +5,7 @@ import {
     DropdownAction,
 } from "keep-react";
 import ContentDetails from "../components/content-detail/ContentDetails";
-import BookContext from "../context/context";
+import {BookContext} from "../context/context";
 
 import { useContext, useState } from "react";
 import Books from "../components/elements/Books";
@@ -15,8 +15,8 @@ let MainContent = () => {
     const [bookID, setBookID] = useState("");
     const [active, setActive] = useState(0);
     return (
-        <div className='flex bg-gray-200 h-full'>
-            <div className='bg-white p-8 shadow-md  overflow-auto flex-1 grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-6 aspect-[2/3]'>
+        <div className='flex bg-gray-200 h-full flex-nowrap'>
+            <div className='bg-white p-8 shadow-md  overflow-auto flex-1 grid grid-cols-1 lg:grid-cols-4 2xl:grid-cols-4 gap-6 '>
                 {books.map((book, index) => (
                     <div
                         key={index}

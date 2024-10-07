@@ -3,7 +3,8 @@ import { createContext } from "react";
 
 
 const BookContext = createContext()
+const CatagoryContext = createContext()
 
-export default BookContext;
+export {BookContext, CatagoryContext};
 
 // why no output 
