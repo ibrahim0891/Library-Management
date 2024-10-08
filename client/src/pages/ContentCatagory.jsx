@@ -84,7 +84,7 @@ let ContentCatagory = () => {
                                     totalBooks={category.totalBooks} 
                                     className='cursor-pointer bg-transparent'
                                 />
-                            </div>
+                            </div>             
                         ))}
                     </div>
 
