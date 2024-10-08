@@ -3,9 +3,10 @@ import { Star } from "phosphor-react";
  
 
 
-let Ratings = ({ratingData}) => {
+let Ratings = ({startCount}) => { 
+    
     const rating = {
-      score: ratingData,
+      score: startCount,
       reviewCount: Math.ceil(Math.random() * 250),
     };
   return (
