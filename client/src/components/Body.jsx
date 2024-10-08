@@ -14,7 +14,7 @@ let KeepDrawer = () => {
               <div className='p-5 m-5 w-96'>
                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quos eligendi velit nobis vitae tenetur esse facilis. Delectus necessitatibus iusto dolore asperiores aspernatur tempore tenetur, ut odit vero doloremque rerum. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio fuga, aliquid et ducimus suscipit nihil eos voluptatum sunt eveniet, fugiat repellat aperiam repudiandae quisquam ullam beatae atque, non incidunt doloremque!logoText: "Keep",
               </div>
-          </DrawerContent>
+          </DrawerContent> 
       </Drawer>
   );
 }
