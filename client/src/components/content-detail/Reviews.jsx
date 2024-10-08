@@ -47,26 +47,13 @@ let Reviews = () => {
                                 {review.author}
                             </p>
                             <div className='flex items-center'>
-                                <Star
-                                    weight='fill'
-                                    className='w-4 h-4 text-yellow-500'
-                                />
-                                <Star
-                                    weight='fill'
-                                    className='w-4 h-4 text-yellow-500'
-                                />
-                                <Star
-                                    weight='fill'
-                                    className='w-4 h-4 text-yellow-500'
-                                />
-                                <Star
-                                    weight='fill'
-                                    className='w-4 h-4 text-yellow-500'
-                                />
-                                <Star
-                                    weight='regular'
-                                    className='w-4 h-4 text-yellow-500'
-                                />
+                                {[...Array(5)].map((_, i) => (
+                                    <Star
+                                        key={i}
+                                        weight={i < review.rating ? 'fill' : 'regular'}
+                                        className='w-4 h-4 text-yellow-500'
+                                    />
+                                ))}
                                 <span className='ml-2 text-sm text-gray-500'>
                                     {review.date}
                                 </span>
