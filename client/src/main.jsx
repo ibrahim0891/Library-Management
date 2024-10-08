@@ -168,13 +168,7 @@ const categories = [
 ];
 
 
-const favoriteBooks = [];
-const numRandomBooks = Math.floor(Math.random() * 2) + 3; // Random number between 3 and 4
 
-for (let i = 0; i < numRandomBooks; i++) {
-    const randomIndex = Math.floor(Math.random() * books.length);
-    favoriteBooks.push(books[randomIndex]);
-}
 
 createRoot(document.getElementById("root")).render(
     <StrictMode>
