@@ -75,7 +75,7 @@ let Sidenav2 = () => {
     return (
         <Drawer position='left'>
             <DrawerAction asChild> 
-                 <Button className="text-black"> <List className="text-3xl"> </List> </Button>
+                 <button className="text-black px-3 md:hidden"> <List className="text-3xl"> </List> </button>
             </DrawerAction>
             <DrawerContent className='fixed top-0 left-0 lg:hidden'>
                 <DrawerClose className='absolute right-5 top-5' />
@@ -98,7 +98,7 @@ let Sidenav2 = () => {
                                 className={({ isActive }) =>
                                     isActive
                                         ? "bg-gray-800 text-white rounded-md p-2 border"
-                                        : "bg-gray-100 rounded-md p-2 border hover:bg-indigo-500 hover:text-white"
+                                        : "bg-gray-100 rounded-md p-2 border hover:bg-gray-200 hover:text-white"
                                 }
                             >
                                 {link.linkIcon}
