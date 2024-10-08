@@ -3,11 +3,12 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./../src/index.css";
 
-import {BookContext, CatagoryContext } from "./context/context";
+import { BookContext, CatagoryContext } from "./context/context";
 
 //book will be fetched here \
 let books = [
     {
+        id: 1,
         imageLink:
             "https://static-cse.canva.com/blob/142565/Blue-Orange-and-Yellow-Cool-Memoir_Inspirational-Book-Cover.jpg",
         bookName: "Futurama",
@@ -16,10 +17,12 @@ let books = [
         pages: 320,
         isbn: "978-1234567890",
         publishYear: 2022,
-        rating: 4
+        rating: 4,
+        category: "art",
     },
 
     {
+        id: 2,
         imageLink:
             "https://marketplace.canva.com/EAFaQMYuZbo/1/0/1003w/canva-brown-rusty-mystery-novel-book-cover-hG1QhA7BiBU.jpg",
         bookName: "The Lost City",
@@ -28,9 +31,11 @@ let books = [
         pages: 280,
         isbn: "978-2345678901",
         publishYear: 2021,
-        rating: 3
+        rating: 3,
+        category: "history",
     },
     {
+        id: 3,
         imageLink:
             "https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/01/enceladus.jpg?auto=format&q=60&fit=max&w=930",
         bookName: "Echoes of Eternity",
@@ -39,9 +44,11 @@ let books = [
         pages: 400,
         isbn: "978-3456789012",
         publishYear: 2023,
-        rating: 5
+        rating: 5,
+        category: "art",
     },
     {
+        id: 4,
         imageLink:
             "https://th.bing.com/th/id/OIP.nZBy3sCgeKohyHazuFccWgHaL2?rs=1&pid=ImgDetMain",
         bookName: "Whispers in the Dark",
@@ -50,9 +57,11 @@ let books = [
         pages: 350,
         isbn: "978-4567890123",
         publishYear: 2020,
-        rating: 4
+        rating: 4,
+        category: "art",
     },
     {
+        id: 5,
         imageLink:
             "https://images.playground.com/37965031-c15b-4c0d-b0e3-f4cc80856cef.jpeg",
         bookName: "The Quantum Paradox",
@@ -61,9 +70,11 @@ let books = [
         pages: 420,
         isbn: "978-5678901234",
         publishYear: 2022,
-        rating: 5
+        rating: 5,
+        category: "history",
     },
     {
+        id: 6,
         imageLink:
             "https://th.bing.com/th/id/OIF.NG8deQVNMqVAZCSnt2esqw?rs=1&pid=ImgDetMain",
         bookName: "Beneath the Willow",
@@ -72,9 +83,11 @@ let books = [
         pages: 300,
         isbn: "978-6789012345",
         publishYear: 2021,
-        rating: 3
+        rating: 3,
+        category: "art",
     },
     {
+        id: 7,
         imageLink:
             "https://th.bing.com/th/id/OIP.nZBy3sCgeKohyHazuFccWgHaL2?rs=1&pid=ImgDetMain",
         bookName: "Whispers in the Dark",
@@ -83,9 +96,11 @@ let books = [
         pages: 350,
         isbn: "978-4567890123",
         publishYear: 2020,
-        rating: 4
+        rating: 4,
+        category: "history",
     },
     {
+        id: 8,
         imageLink:
             "https://images.playground.com/37965031-c15b-4c0d-b0e3-f4cc80856cef.jpeg",
         bookName: "The Quantum Paradox",
@@ -94,9 +109,11 @@ let books = [
         pages: 420,
         isbn: "978-5678901234",
         publishYear: 2022,
-        rating: 5
+        rating: 5,
+        category: "art",
     },
     {
+        id: 9,
         imageLink:
             "https://th.bing.com/th/id/OIF.NG8deQVNMqVAZCSnt2esqw?rs=1&pid=ImgDetMain",
         bookName: "Beneath the Willow",
@@ -105,78 +122,31 @@ let books = [
         pages: 300,
         isbn: "978-6789012345",
         publishYear: 2021,
-        rating: 3
+        rating: 3,
+        category: "history",
     },
 ];
+const booksForArts = books
+    .filter((book) => book.category === "art")
+    .map((book, index) => ({
+        id: index + 1,
+        bookName: book.bookName,
+        authorName: book.authorName,
+        publishYear: book.publishYear,
+        imageLink: book.imageLink,
+        rating: book.rating,
+    }));
 
-const booksForArts = [
-    {
-        id: 3,
-        title: "অসামাপ্ত আত্মজীবনী",
-        author: "দেবদাস চক্রবর্তী",
-        year: 1950,
-        image: "https://4.bp.blogspot.com/-cMMxaBuplbw/V4joKg-V0uI/AAAAAAAAAMg/YznFT3tkgqYBE7ibhhtlVe32YBB3GsBNgCLcB/s1600/oshomapto-attojiboni-by-sheikh-Mujibur-Rahman.jpg",
-    },
-    {
-        id: 4,
-        title: "Ways of Seeing",
-        author: "John Berger",
-        year: 1972,
-        image: "https://www.ebookconversion.com/wp-content/uploads/2015/12/0_Page_41.jpg",
-    },
-    {
-        id: 6,
-        title: "Art Through the Ages",
-        author: "Helen Gardner",
-        year: 1926,
-        image: "https://th.bing.com/th/id/R.fc8de65203e7d945a594380a4acc05ae?rik=rEXgVvGv07hBFw&pid=ImgRaw&r=0",
-    },
-    {
-        id: 7,
-        title: "মুক্ত বাতাসের খোঁজে ",
-        author: "লস্ট মডেস্টি",
-        year: 1994,
-        image: "https://th.bing.com/th/id/OIP.cPs2BOmvY_wvlLJ84B0lgQAAAA?w=474&h=739&rs=1&pid=ImgDetMain",
-    },
-    {
-        id: 7,
-        title: "মুক্ত বাতাসের খোঁজে ",
-        author: "লস্ট মডেস্টি",
-        year: 1994,
-        image: "https://th.bing.com/th/id/OIP.cPs2BOmvY_wvlLJ84B0lgQAAAA?w=474&h=739&rs=1&pid=ImgDetMain",
-    },
-];
-const booksForHistory = [
-    {
-        id: 3,
-        title: "সমাপ্ত আত্মজীবনী",
-        author: "শেখ মুজিব চক্রবর্তী",
-        year: 1950,
-        image: "https://4.bp.blogspot.com/-cMMxaBuplbw/V4joKg-V0uI/AAAAAAAAAMg/YznFT3tkgqYBE7ibhhtlVe32YBB3GsBNgCLcB/s1600/oshomapto-attojiboni-by-sheikh-Mujibur-Rahman.jpg",
-    },
-    {
-        id: 4,
-        title: "২৪ এর গনঅভ্যুত্থান ",
-        author: "John Berger",
-        year: 1972,
-        image: "https://www.ebookconversion.com/wp-content/uploads/2015/12/0_Page_41.jpg",
-    },
-    {
-        id: 6,
-        title: "Art Through the Ages",
-        author: "Helen Gardner",
-        year: 1926,
-        image: "https://th.bing.com/th/id/R.fc8de65203e7d945a594380a4acc05ae?rik=rEXgVvGv07hBFw&pid=ImgRaw&r=0",
-    },
-    {
-        id: 7,
-        title: "খোলা বাতাসের খোঁজে ",
-        author: "লস্ট মডেস্টি",
-        year: 1994,
-        image: "https://th.bing.com/th/id/OIP.cPs2BOmvY_wvlLJ84B0lgQAAAA?w=474&h=739&rs=1&pid=ImgDetMain",
-    },
-];
-
+const booksForHistory = books
+    .filter((book) => book.category === "history")
+    .map((book, index) => ({
+        id: index + 1,
+        bookName: book.bookName,
+        authorName: book.authorName,
+        publishYear: book.publishYear,
+        imageLink: book.imageLink,
+        rating: book.rating,
+    }));
 
 const catagoryAndBooks = {
     arts: booksForArts,
@@ -200,7 +170,7 @@ const categories = [
 createRoot(document.getElementById("root")).render(
     <StrictMode>
         <BookContext.Provider value={books}>
-            <CatagoryContext.Provider value={{categories, catagoryAndBooks}}>
+            <CatagoryContext.Provider value={{ categories, catagoryAndBooks }}>
                 <App />
             </CatagoryContext.Provider>
         </BookContext.Provider>
