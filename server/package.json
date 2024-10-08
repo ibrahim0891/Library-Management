@@ -4,6 +4,6 @@
     "express": "^4.21.0"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node init && nodemon server.js"
   }
 }
